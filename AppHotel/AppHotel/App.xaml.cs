@@ -17,6 +17,29 @@ namespace AppHotel
                 ValorDiariaAdulto = 110.0,
                 ValorDiariaCrianca = 55.0
             },
+
+            new Model.CategoriaQuarto()
+            {
+                Descricao = "Suíte Luxo",
+                ValorDiariaAdulto = 80.0,
+                ValorDiariaCrianca = 40.0
+            },
+
+            new Model.CategoriaQuarto()
+            {
+                Descricao = "Suíte Single",
+                ValorDiariaAdulto = 50.0,
+                ValorDiariaCrianca = 25.0
+            }, 
+        }; 
+       
+        public App()
+        {
+            InitializeComponent();
+            
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pt-BR");
+
+            MainPage = new NavigationPage(new View.ContratacaoHospedagem());
         }
 
         protected override void OnStart()
