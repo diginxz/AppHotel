@@ -13,8 +13,42 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition 
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.ColumnSpan="4"
+                   Text="Calculo Diária"
+                   FontSize="Title"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="CenterAndExpand"/>
+
+            <Image x:Name="img1" Source="benio.jpg"
+                   Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="4"
+                   Aspect="AspectFit"/>
+
+            <Label Grid.Row="3" Grid.Column="0"
+                   Text="Adultos:"
+                   Style="{StaticResource LabelsCampos}"/>
+
+            <Label x:Name="lbl_qnt_adultos" Grid.Row="3" Grid.Column="1"
+                   BindingContext="{x:Reference stepperAdulto}"
+                   Text="{Binding Value}"
+                   Style="{StaticResource LabelsValoresStepper}"/>
+
+            <Stepper x:Name="stepperAdulto" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"
+                     Minimum="0"
+                     Maximum="10"
+                     Increment="1"/>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
